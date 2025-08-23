@@ -1,0 +1,94 @@
+.app-container {
+  max-width: 400px;
+  margin: 5vh auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(10,30,80,0.12);
+  padding: 30px;
+}
+h2 {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 18px;
+  color: #234;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+input[type="file"] {
+  background: #f0f0f5;
+  border-radius: 7px;
+  padding: 7px;
+}
+input[type="email"], input[type="text"] {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  padding: 10px 9px;
+  margin-top: 2px;
+  transition: box-shadow 0.2s;
+}
+input[type="email"]:focus, input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 4px #5b85ea33;
+}
+button {
+  background: #5b85ea;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  padding: 10px 0;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s, opacity 0.2s;
+}
+button:disabled {
+  background: #aac6fa;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+button:hover:not(:disabled) {
+  background: #466ec8;
+}
+input[readonly] {
+  background: #f8f8fb;
+}
+.success-link-box {
+  background: #f7fbfa;
+  border-radius: 7px;
+  padding: 13px 8px;
+  border: 1px solid #e3e7eb;
+  margin-bottom: 14px;
+  word-break: break-all;
+  font-size: 14px;
+}
+.meta-info {
+  color: #789;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.download-page strong {
+  color: #1a3565;
+  margin-right: 4px;
+}
+.expired-label {
+  color: #e15353;
+  font-weight: bold;
+}
+a {
+  color: #5b85ea;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 500px) {
+  .app-container {
+    max-width: 98vw;
+    padding: 8vw 2vw;
+  }
+}

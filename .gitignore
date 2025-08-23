@@ -1,0 +1,13 @@
+backend/node_modules/
+frontend/node_modules/
+backend/.env
+backend/uploads/
+backend/logs
+*.log
+frontend/dist/
+dist/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
