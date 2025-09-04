@@ -4,11 +4,14 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const fileRoutes = require('./routes/fileRoutes');
 const userRoutes = require('./routes/userRouter');
+const fs = require('fs');
+const path = require('path');
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+
 const allowedOrigins = [
   'https://we-transfer-iota.vercel.app',
   'https://we-transfer-5orhf9v4u-aryanjearths-projects.vercel.app',
@@ -27,6 +30,13 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+// Ensure uploads directory exists:
+const uploadsDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir);
+  console.log('Created uploads directory');
+}
 
 mongoose.connect(process.env.MONGO_URI).then(() =>
   console.log('MongoDB connected')
