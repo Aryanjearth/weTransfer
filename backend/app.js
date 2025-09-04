@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/uploads', express.static('uploads'));
 const corsOptions = {
-  origin: 'https://we-transfer-iota.vercel.app/', // replace with your actual Vercel frontend URL
+  origin: 'https://we-transfer-iota.vercel.app', // replace with your actual Vercel frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true, // if you are sending cookies or authorization headers
 };
