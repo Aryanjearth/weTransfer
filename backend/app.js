@@ -7,7 +7,7 @@ const userRoutes = require('./routes/userRouter');
 
 dotenv.config();
 const corsOptions = {
-  origin: 'https://your-vercel-app-domain.vercel.app', // replace with your actual Vercel frontend URL
+  origin: 'https://we-transfer-iota.vercel.app/', // replace with your actual Vercel frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true, // if you are sending cookies or authorization headers
 };
