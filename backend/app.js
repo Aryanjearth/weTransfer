@@ -6,6 +6,11 @@ const fileRoutes = require('./routes/fileRoutes');
 const userRoutes = require('./routes/userRouter');
 
 dotenv.config();
+
+const app = express();
+app.use(express.json());
+app.use(cors());
+app.use('/uploads', express.static('uploads'));
 const corsOptions = {
   origin: 'https://we-transfer-iota.vercel.app/', // replace with your actual Vercel frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -13,11 +18,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-const app = express();
-app.use(express.json());
-app.use(cors());
-app.use('/uploads', express.static('uploads'));
-
 mongoose.connect(process.env.MONGO_URI).then(() =>
   console.log('MongoDB connected')
 );
