@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-
+const backendUrl = "https://wetransfer-leve.onrender.com"
 function getCountdown(expiryTime) {
   const end = new Date(expiryTime).getTime();
   const now = Date.now();
@@ -20,7 +20,7 @@ export default function DownloadPage() {
   const [countdown, setCountdown] = useState('');
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/files/info/${uuid}`)
+    axios.get(`${backendUrl}/api/files/info/${uuid}`)
       .then((res) => setFileInfo(res.data))
       .catch(() => setNotFound(true));
   }, [uuid]);
@@ -40,7 +40,7 @@ export default function DownloadPage() {
       <div><strong>File Name:</strong> {fileInfo.filename}</div>
       <div><strong>Expires in:</strong> {countdown === 'Expired' ? <span className="expired-label">{countdown}</span> : countdown}</div>
       <div><strong>Download count:</strong> {fileInfo.download_count}</div>
-      <a href={`http://localhost:5000/api/files/download/${uuid}`} target="_blank" rel="noopener noreferrer">
+      <a href={`${backendUrl}/api/files/download/${uuid}`} target="_blank" rel="noopener noreferrer">
         <button disabled={countdown === 'Expired'}>Download</button>
       </a>
     </div>

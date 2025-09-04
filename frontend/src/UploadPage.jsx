@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+const backendUrl = "https://wetransfer-leve.onrender.com"
 export default function UploadPage() {
   const [file, setFile] = useState();
   const [sender, setSender] = useState('');
@@ -26,7 +26,7 @@ export default function UploadPage() {
 
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/files/upload', formData);
+      const res = await axios.post(`${backendUrl}/api/files/upload`, formData);
       setLoading(false);
       if (res.data.uuid) {
         setSuccess('File uploaded successfully!');

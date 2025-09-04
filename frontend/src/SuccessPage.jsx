@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-
+const backendUrl = "https://wetransfer-leve.onrender.com"
 export default function SuccessPage() {
   const { uuid } = useParams();
-  const downloadLink = uuid ? `http://localhost:5000/api/files/download/${uuid}` : '';
+  const downloadLink = uuid ? `${backendUrl}/api/files/download/${uuid}` : '';
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
