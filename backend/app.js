@@ -6,7 +6,13 @@ const fileRoutes = require('./routes/fileRoutes');
 const userRoutes = require('./routes/userRouter');
 
 dotenv.config();
+const corsOptions = {
+  origin: 'https://your-vercel-app-domain.vercel.app', // replace with your actual Vercel frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true, // if you are sending cookies or authorization headers
+};
 
+app.use(cors(corsOptions));
 const app = express();
 app.use(express.json());
 app.use(cors());
