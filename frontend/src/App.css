@@ -55,7 +55,7 @@ button:hover:not(:disabled) {
   background: #466ec8;
 }
 input[readonly] {
-  background: #f8f8fb;
+  background: black#f8f8fb;
 }
 .success-link-box {
   background: #f7fbfa;
